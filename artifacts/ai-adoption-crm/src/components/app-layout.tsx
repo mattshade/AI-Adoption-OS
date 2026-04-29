@@ -6,10 +6,10 @@ const STORAGE_KEY = "adoption-crm:theme";
 
 export function AppLayout({ children }: { children: ReactNode }) {
   const [dark, setDark] = useState<boolean>(() => {
-    if (typeof window === "undefined") return false;
+    if (typeof window === "undefined") return true;
     const stored = window.localStorage.getItem(STORAGE_KEY);
     if (stored) return stored === "dark";
-    return false;
+    return true;
   });
 
   useEffect(() => {
