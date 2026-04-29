@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { AppSidebar } from "./app-sidebar";
 import { AppHeader } from "./app-header";
 
-const STORAGE_KEY = "adoption-crm:theme";
+const STORAGE_KEY = "adoption-crm:theme:v2";
 
 export function AppLayout({ children }: { children: ReactNode }) {
   const [dark, setDark] = useState<boolean>(() => {
