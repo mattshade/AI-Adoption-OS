@@ -252,11 +252,11 @@ export default function DashboardsPage() {
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex flex-col gap-2 px-3 py-7 md:px-6">
+    <div className="flex flex-col gap-2 px-3 py-6 md:px-6 md:py-7">
       <div className="text-[10.5px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
         {label}
       </div>
-      <div className="font-serif text-[40px] leading-none tracking-tight text-foreground">
+      <div className="font-serif text-[28px] leading-none tracking-tight text-foreground sm:text-[36px] md:text-[40px]">
         {value}
       </div>
     </div>
@@ -277,21 +277,21 @@ function ChartTile({
   flush?: boolean;
 }) {
   return (
-    <section className={"flex flex-col gap-4 bg-background p-6 md:p-8 " + (flush ? "" : "border border-border")}>
+    <section className={"flex flex-col gap-4 bg-background p-5 sm:p-6 md:p-8 " + (flush ? "" : "border border-border")}>
       <header>
         {eyebrow && (
           <div className="text-[10.5px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
             {eyebrow}
           </div>
         )}
-        <h2 className="mt-1 font-serif text-2xl tracking-tight text-foreground">{title}</h2>
+        <h2 className="mt-1 font-serif text-xl tracking-tight text-foreground sm:text-2xl">{title}</h2>
         {description && (
           <p className="mt-2 max-w-xl text-[13px] leading-relaxed text-muted-foreground">
             {description}
           </p>
         )}
       </header>
-      <div className="-mx-2 mt-2 md:-mx-3">{children}</div>
+      <div className="-mx-1 mt-2 sm:-mx-2 md:-mx-3">{children}</div>
     </section>
   );
 }

@@ -20,12 +20,12 @@ export function SectionHeader({
 }) {
   const titleSize =
     size === "sm"
-      ? "text-2xl"
+      ? "text-xl sm:text-2xl"
       : size === "md"
-        ? "text-3xl"
+        ? "text-2xl sm:text-3xl"
         : size === "lg"
-          ? "text-5xl"
-          : "text-6xl md:text-7xl";
+          ? "text-3xl sm:text-4xl md:text-5xl"
+          : "text-[40px] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl";
   return (
     <div
       className={cn(

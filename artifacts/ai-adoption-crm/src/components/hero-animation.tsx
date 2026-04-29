@@ -66,7 +66,7 @@ export function HeroAnimation() {
   return (
     <div className="relative isolate w-full">
       {/* The CRM mock surface — appears beneath fragments during organize phase */}
-      <div className="relative h-[420px] w-full md:h-[480px]">
+      <div className="relative h-[340px] w-full sm:h-[420px] md:h-[480px]">
         {/* Subtle background grid */}
         <motion.div
           className="absolute inset-0"
@@ -85,13 +85,13 @@ export function HeroAnimation() {
 
         {/* Three CRM elements: team cards (left), pipeline (middle), chart (right) */}
         <motion.div
-          className="grid h-full grid-cols-12 gap-4 md:gap-6"
+          className="grid h-full grid-cols-12 gap-3 sm:gap-4 md:gap-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: organized ? 1 : 0 }}
           transition={{ duration: 0.7, delay: 0.05, ease: "easeOut" }}
         >
           {/* Team cards column */}
-          <div className="col-span-5 flex flex-col gap-3 md:gap-4">
+          <div className="col-span-7 flex flex-col gap-3 sm:col-span-5 md:gap-4">
             <MockTeamCard
               slotPrefix="card1"
               teamName="Engineering Platform"
@@ -113,8 +113,8 @@ export function HeroAnimation() {
             />
           </div>
 
-          {/* Pipeline column */}
-          <div className="col-span-3 flex flex-col gap-2">
+          {/* Pipeline column — hidden on mobile to keep things readable */}
+          <div className="hidden flex-col gap-2 sm:col-span-3 sm:flex">
             <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
               Pipeline
             </div>
@@ -125,7 +125,7 @@ export function HeroAnimation() {
           </div>
 
           {/* Chart column */}
-          <div className="col-span-4 flex flex-col">
+          <div className="col-span-5 flex flex-col sm:col-span-4">
             <div className="flex items-baseline justify-between">
               <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                 Weekly active AI users

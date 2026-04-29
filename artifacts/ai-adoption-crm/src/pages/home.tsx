@@ -22,16 +22,16 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* HERO */}
-      <section className="pt-2 pb-16 md:pt-6 md:pb-24">
-        <div className="mb-12 flex items-end justify-between gap-6">
+      <section className="pt-2 pb-12 sm:pb-16 md:pt-6 md:pb-24">
+        <div className="mb-8 flex items-end justify-between gap-6 sm:mb-12">
           <div className="max-w-3xl">
-            <div className="mb-4 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+            <div className="mb-3 text-[10.5px] font-medium uppercase tracking-[0.2em] text-muted-foreground sm:mb-4 sm:text-[11px]">
               An adoption operating system for the AI era
             </div>
-            <h1 className="font-serif text-[44px] leading-[1.02] tracking-[-0.02em] text-foreground md:text-[78px]">
+            <h1 className="font-serif text-[36px] leading-[1.05] tracking-[-0.02em] text-foreground sm:text-[52px] md:text-[78px] md:leading-[1.02]">
               The CRM that made enterprise AI&nbsp;<em className="not-italic text-foreground/70">legible.</em>
             </h1>
-            <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
+            <p className="mt-5 max-w-xl text-[14px] leading-relaxed text-muted-foreground sm:mt-6 sm:text-[15px]">
               Track every AI tool, every team, every enablement moment in one editorial
               workspace. Built so an enablement leader can see the program at a glance
               and act on the next right thing.
@@ -47,29 +47,29 @@ export default function HomePage() {
 
       {/* BEFORE & AFTER CALLOUT */}
       <section className="grid grid-cols-1 gap-0 border-y border-border md:grid-cols-2">
-        <div className="border-b border-border p-8 md:border-b-0 md:border-r md:p-12">
+        <div className="border-b border-border p-6 sm:p-8 md:border-b-0 md:border-r md:p-12">
           <div className="mb-3 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
             Before
           </div>
-          <h3 className="font-serif text-2xl leading-snug tracking-tight md:text-3xl">
+          <h3 className="font-serif text-xl leading-snug tracking-tight sm:text-2xl md:text-3xl">
             A spreadsheet of usernames, a Slack channel of complaints, and a quarterly
             pulse survey nobody trusts.
           </h3>
-          <ul className="mt-6 space-y-2 text-[14px] text-muted-foreground">
+          <ul className="mt-5 space-y-2 text-[13.5px] text-muted-foreground sm:mt-6 sm:text-[14px]">
             <li>· No shared view of which team uses which tool</li>
             <li>· Risk surfaced only after an incident</li>
             <li>· Enablement work invisible to leadership</li>
           </ul>
         </div>
-        <div className="bg-secondary/40 p-8 md:p-12">
+        <div className="bg-secondary/40 p-6 sm:p-8 md:p-12">
           <div className="mb-3 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
             After
           </div>
-          <h3 className="font-serif text-2xl leading-snug tracking-tight md:text-3xl">
+          <h3 className="font-serif text-xl leading-snug tracking-tight sm:text-2xl md:text-3xl">
             One CRM that reads like an editorial — every team has a record, every record
             tells a story, every story leads to an action.
           </h3>
-          <ul className="mt-6 space-y-2 text-[14px] text-foreground/80">
+          <ul className="mt-5 space-y-2 text-[13.5px] text-foreground/80 sm:mt-6 sm:text-[14px]">
             <li>· {METRICS.teamsTracked} teams tracked across {TOOLS.length} tools</li>
             <li>· Risk and governance posture visible per team</li>
             <li>· Recommendations generated weekly, owned by champions</li>
@@ -253,13 +253,13 @@ function Metric({
   risk?: boolean;
 }) {
   return (
-    <div className="flex flex-col gap-2 px-2 py-7 md:px-6">
+    <div className="flex flex-col gap-2 px-3 py-6 md:px-6 md:py-7">
       <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
         {label}
       </div>
       <div
         className={
-          "font-serif text-[40px] leading-none tracking-tight md:text-[52px] " +
+          "font-serif text-[30px] leading-none tracking-tight sm:text-[40px] md:text-[52px] " +
           (accent
             ? "text-[hsl(158_32%_28%)] dark:text-[hsl(158_32%_70%)]"
             : risk
