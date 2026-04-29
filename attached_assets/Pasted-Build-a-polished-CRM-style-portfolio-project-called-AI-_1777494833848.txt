@@ -1,0 +1,240 @@
+Build a polished CRM-style portfolio project called AI Tool Adoption CRM.
+
+This should be a substantial, realistic product that tracks AI tool usage, adoption, enablement, risk, and impact across a large enterprise organization. It should feel like a CRM, but instead of managing customers, it manages teams, tools, champions, enablement touchpoints, adoption health, and AI workflow maturity.
+
+Context:
+This product is inspired by Matt Shade’s prior AI dashboard work, including:
+- ChatGPT usage and adoption dashboard
+- Developer agent competitive analysis
+- GitHub Copilot metrics dashboard
+
+Use the project as a design systems and CRM portfolio piece that shows strong UX, systems thinking, AI product design, dashboard design, and complex workflow design.
+
+Core product concept:
+Create a CRM for managing enterprise AI adoption across departments. The primary users are AI enablement leads, design/engineering managers, platform teams, and leadership.
+
+The app should include the following major sections:
+
+1. Home Dashboard
+Show a clear executive overview with:
+- Total active users
+- Adoption rate
+- Weekly active AI users
+- Tool usage by department
+- Enablement sessions completed
+- Productivity signals
+- Risk and governance alerts
+- Top growth teams
+- Teams needing intervention
+
+2. Teams CRM
+Create a rich CRM-style table of teams and departments.
+Each team should include:
+- Team name
+- Department
+- Leader
+- AI champion
+- Current tools used
+- Adoption stage
+- Usage score
+- Enablement status
+- Risk level
+- Last touchpoint
+- Next recommended action
+
+Include at least 30 realistic teams across departments like Engineering, Product, Design, Editorial, Marketing, Legal, Finance, HR, Data, Security, and Operations.
+
+3. Team Detail Page
+When clicking a team, show a full CRM record with:
+- Team profile
+- Adoption history
+- Tool usage trends
+- Notes
+- Enablement touchpoints
+- Open risks
+- Recommended next steps
+- AI-generated summary
+- Stakeholder map
+- Timeline of activity
+
+Make this feel like a real CRM contact/account record.
+
+4. Tool Portfolio
+Track tools like:
+- ChatGPT Enterprise
+- GitHub Copilot
+- Cursor
+- Claude Code
+- OpenAI Codex
+- Google Antigravity
+- Microsoft Copilot
+- Gemini
+- Figma Make
+
+For each tool show:
+- Adoption level
+- Primary use cases
+- Department fit
+- Governance maturity
+- Productivity impact
+- Trust score
+- Risk level
+- Recommendation status such as Adopt, Pilot, Monitor, Retire
+
+Use competitive dimensions inspired by Matt’s developer agent analysis:
+- Autonomy
+- Codebase understanding
+- Safety and control
+- Developer trust
+- Production readiness
+- Image and design support
+- Enterprise governance
+
+The developer agent comparison should include Cursor, Codex, Copilot, Claude Code, and Antigravity, with scoring patterns similar to Matt’s analysis, where Cursor and Codex are strong overall, Copilot is strongest for enterprise readiness, and Antigravity is promising but higher risk.
+
+5. Enablement Pipeline
+Create a CRM pipeline view for AI enablement.
+Stages:
+- Not started
+- Discovery
+- Pilot
+- Training scheduled
+- Active adoption
+- Scaled
+- Needs support
+
+Each item should represent a team moving through adoption. Let users drag or move teams between stages.
+
+6. Interaction Log
+Create a timeline of touchpoints:
+- Office hours
+- Workshops
+- Tool onboarding
+- Security review
+- Prototype review
+- Leadership update
+- Follow-up needed
+
+Each entry should have:
+- Date
+- Team
+- Owner
+- Type
+- Summary
+- Outcome
+- Next step
+
+7. AI Insights Panel
+Add an always-visible AI assistant panel that provides:
+- “Teams at risk this week”
+- “Recommended next actions”
+- “Adoption anomalies”
+- “Tool consolidation opportunities”
+- “Suggested enablement sessions”
+- “Executive summary”
+
+This should be mocked locally with deterministic logic, not a real API.
+
+8. Data-Powered Dashboards
+Include charts and visualizations for:
+- Weekly active users by tool
+- Adoption by department
+- Usage by role
+- Enablement impact over time
+- Risk distribution
+- Tool satisfaction
+- Governance readiness
+- Prototype velocity
+
+Use realistic sample data. Make the dashboard feel substantial.
+
+9. Design System Page
+Because this is also a design systems portfolio piece, include a page that documents the system:
+- Color tokens
+- Typography
+- Components
+- Tables
+- Badges
+- Risk tags
+- Status indicators
+- Cards
+- Charts
+- Empty states
+- AI insight patterns
+
+Show the components in a Storybook-like layout inside the app.
+
+10. Governance and Trust
+Include a governance view showing:
+- Approved tools
+- Pilot tools
+- Restricted tools
+- Data sensitivity rules
+- Compliance review status
+- Audit log availability
+- Privacy mode
+- Human review requirements
+
+Make trust and control a major part of the product.
+
+Sample data requirements:
+Generate a large local dataset with:
+- 30 teams
+- 9 AI tools
+- 150 usage events
+- 60 enablement interactions
+- 40 risks
+- 30 recommendations
+- 12 dashboard metrics
+- 8 reusable component examples
+
+The data should be realistic and varied. Avoid placeholder names like Team 1 or User 1.
+
+Design direction:
+Make it feel like a modern enterprise SaaS product, somewhere between Linear, Salesforce, Glean, and a polished internal analytics dashboard.
+
+Visual style:
+- Clean, sharp, professional
+- Light mode by default with optional dark mode
+- Excellent table design
+- Strong information hierarchy
+- High-quality cards and charts
+- Subtle motion
+- Clear status colors
+- No generic AI sparkle overload
+
+Technical requirements:
+Use React, TypeScript, Tailwind, and local mock data.
+Use Recharts or a similar charting library.
+No backend required.
+No API keys required.
+State should be stored locally where useful.
+Make all major sections navigable from a sidebar.
+Make tables searchable and filterable.
+Make team records clickable.
+Make the app feel complete enough to demo in an interview.
+
+Important UX requirements:
+This should not feel like a generic dashboard.
+It should feel like a CRM for AI adoption and enablement.
+The value should be obvious within 10 seconds.
+The user should immediately understand:
+- Which teams are adopting AI well
+- Which teams need support
+- Which tools are creating value
+- Which tools create risk
+- What action to take next
+
+Add three high-impact “portfolio callout” moments in the UI:
+1. A “why this matters” panel explaining how the system helps scale AI adoption.
+2. A “design challenge” panel explaining how the product turns messy AI usage data into clear CRM workflows.
+3. A “before and after” panel showing how teams move from scattered AI experimentation to governed adoption.
+
+Add realistic example insights such as:
+- “Design Systems moved from Pilot to Scaled after three enablement sessions and prototype support.”
+- “Editorial has high ChatGPT usage but low governance readiness.”
+- “Engineering Platform shows strong Copilot adoption but rising Cursor experimentation.”
+- “Legal requires targeted enablement before expanding AI usage.”
+- “Teams with office hours show 27% higher weekly active usage.”
+
+Make the final app polished enough to use as a portfolio case study for senior product design, design systems, CRM, AI product design, and developer experience roles.
