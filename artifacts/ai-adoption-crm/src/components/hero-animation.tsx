@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "wouter";
 
 type Fragment = {
   id: string;
@@ -166,17 +167,20 @@ export function HeroAnimation() {
         </AnimatePresence>
         <AnimatePresence>
           {(phase === "reveal" || phase === "done") && (
-            <motion.a
+            <motion.div
               key="cta"
-              href="./teams"
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 border border-foreground bg-foreground px-5 py-2.5 text-[12.5px] font-medium uppercase tracking-[0.14em] text-background transition-opacity hover:opacity-90"
             >
-              View the operating system
-              <span aria-hidden>→</span>
-            </motion.a>
+              <Link
+                to="/teams"
+                className="inline-flex items-center gap-2 border border-foreground bg-foreground px-5 py-2.5 text-[12.5px] font-medium uppercase tracking-[0.14em] text-background transition-opacity hover:opacity-90"
+              >
+                View the operating system
+                <span aria-hidden>→</span>
+              </Link>
+            </motion.div>
           )}
         </AnimatePresence>
       </div>
