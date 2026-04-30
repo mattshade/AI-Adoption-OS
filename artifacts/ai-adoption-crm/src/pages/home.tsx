@@ -169,7 +169,11 @@ export default function HomePage() {
         />
         <div className="mt-10 grid grid-cols-1 gap-px bg-border md:grid-cols-3">
           {topInsights.map((ins) => (
-            <article key={ins.id} className="flex flex-col bg-background p-7 md:p-8">
+            <Link
+              key={ins.id}
+              to="/insights"
+              className="group flex flex-col bg-background p-7 transition-colors hover:bg-secondary/40 md:p-8"
+            >
               <div className="text-[10px] font-medium uppercase tracking-[0.2em] text-[hsl(158_32%_28%)] dark:text-[hsl(158_32%_70%)]">
                 {ins.category}
               </div>
@@ -179,10 +183,11 @@ export default function HomePage() {
               <p className="mt-4 flex-1 text-[14px] leading-relaxed text-muted-foreground">
                 {ins.body}
               </p>
-              <div className="mt-6 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-                Read full insight →
+              <div className="mt-6 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-muted-foreground transition-colors group-hover:text-foreground">
+                Read full insight
+                <ArrowUpRight className="h-3 w-3" />
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>

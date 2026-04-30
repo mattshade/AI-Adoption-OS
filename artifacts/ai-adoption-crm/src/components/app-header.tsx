@@ -1,4 +1,4 @@
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ChevronRight, Menu, Search } from "lucide-react";
 
 const TITLES: Record<string, string> = {
@@ -44,11 +44,14 @@ export function AppHeader({ onOpenNav }: { onOpenNav?: () => void }) {
         </div>
       </div>
       <div className="hidden items-center gap-3 md:flex">
-        <div className="flex h-8 items-center gap-2 border border-border bg-background px-3 text-muted-foreground">
+        <Link
+          to="/teams"
+          className="flex h-8 items-center gap-2 border border-border bg-background px-3 text-muted-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
+        >
           <Search className="h-3.5 w-3.5" />
           <span className="text-[12px] tracking-tight">Search teams, tools, insights</span>
           <span className="ml-2 hidden border border-border px-1.5 py-px font-mono text-[10px] uppercase tracking-wider md:inline">⌘K</span>
-        </div>
+        </Link>
       </div>
     </header>
   );

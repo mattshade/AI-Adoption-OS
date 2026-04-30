@@ -1,8 +1,42 @@
 import { useMemo, useState } from "react";
+import { Link } from "wouter";
+import { ArrowUpRight } from "lucide-react";
 import { SectionHeader } from "@/components/section-header";
 import { EditorialQuote } from "@/components/editorial-quote";
 import { INSIGHTS, type Insight } from "@/data/seed";
 import { cn } from "@/lib/utils";
+
+function destinationFor(insight: Insight): string {
+  switch (insight.category) {
+    case "Risk":
+      return "/governance";
+    case "Action":
+    case "Enablement":
+      return "/pipeline";
+    case "Anomaly":
+    case "Consolidation":
+      return "/tools";
+    case "Executive":
+    default:
+      return "/dashboards";
+  }
+}
+
+function destinationLabel(insight: Insight): string {
+  switch (insight.category) {
+    case "Risk":
+      return "Open in governance";
+    case "Action":
+    case "Enablement":
+      return "Open in pipeline";
+    case "Anomaly":
+    case "Consolidation":
+      return "Open in tool portfolio";
+    case "Executive":
+    default:
+      return "Open in dashboards";
+  }
+}
 
 const CATEGORIES: Array<Insight["category"] | "All"> = [
   "All",
@@ -59,7 +93,10 @@ export default function InsightsPage() {
       </div>
 
       {featured && (
-        <article className="grid grid-cols-1 gap-10 border-y border-border py-10 md:grid-cols-3 md:py-14">
+        <Link
+          to={destinationFor(featured)}
+          className="group grid grid-cols-1 gap-10 border-y border-border py-10 transition-colors hover:bg-secondary/30 md:grid-cols-3 md:py-14"
+        >
           <div className="md:col-span-1">
             <div className="text-[10.5px] uppercase tracking-[0.2em] text-[hsl(158_32%_28%)] dark:text-[hsl(158_32%_70%)]">
               {featured.category} · Editor's pick
@@ -75,13 +112,21 @@ export default function InsightsPage() {
             <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
               {featured.body}
             </p>
+            <div className="mt-6 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-muted-foreground transition-colors group-hover:text-foreground">
+              {destinationLabel(featured)}
+              <ArrowUpRight className="h-3 w-3" />
+            </div>
           </div>
-        </article>
+        </Link>
       )}
 
       <div className="grid grid-cols-1 gap-px bg-border md:grid-cols-2 xl:grid-cols-3">
         {rest.map((ins) => (
-          <article key={ins.id} className="flex flex-col bg-background p-7 md:p-8">
+          <Link
+            key={ins.id}
+            to={destinationFor(ins)}
+            className="group flex flex-col bg-background p-7 transition-colors hover:bg-secondary/40 md:p-8"
+          >
             <div className="text-[10px] font-medium uppercase tracking-[0.2em] text-[hsl(158_32%_28%)] dark:text-[hsl(158_32%_70%)]">
               {ins.category}
             </div>
@@ -91,7 +136,11 @@ export default function InsightsPage() {
             <p className="mt-3 flex-1 text-[13.5px] leading-relaxed text-muted-foreground">
               {ins.body}
             </p>
-          </article>
+            <div className="mt-5 inline-flex items-center gap-1.5 text-[10.5px] uppercase tracking-[0.16em] text-muted-foreground transition-colors group-hover:text-foreground">
+              {destinationLabel(ins)}
+              <ArrowUpRight className="h-3 w-3" />
+            </div>
+          </Link>
         ))}
       </div>
 

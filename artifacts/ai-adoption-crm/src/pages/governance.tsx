@@ -12,6 +12,8 @@ import {
   PolarAngleAxis,
   PolarRadiusAxis,
 } from "recharts";
+import { Link } from "wouter";
+import { ArrowUpRight } from "lucide-react";
 import { SectionHeader } from "@/components/section-header";
 import { EditorialQuote } from "@/components/editorial-quote";
 import { RiskBadge } from "@/components/risk-badge";
@@ -174,13 +176,16 @@ export default function GovernancePage() {
           <ul className="divide-y divide-border">
             {openRisks.slice(0, 24).map((r) => {
               const team = teamMap[r.teamId];
-              return (
-                <li key={r.id} className="grid grid-cols-12 items-start gap-4 px-3 py-4 text-[13px]">
+              const inner = (
+                <>
                   <div className="col-span-6 md:col-span-1">
                     <RiskBadge level={r.severity} />
                   </div>
-                  <div className="col-span-6 md:col-span-3 font-serif text-[15px] tracking-tight text-foreground">
+                  <div className="col-span-6 md:col-span-3 flex items-center gap-1.5 font-serif text-[15px] tracking-tight text-foreground">
                     {team?.name ?? "—"}
+                    {team && (
+                      <ArrowUpRight className="h-3 w-3 text-muted-foreground transition-colors group-hover:text-foreground" />
+                    )}
                   </div>
                   <div className="col-span-6 md:col-span-2 text-foreground/80">{r.category}</div>
                   <div className="col-span-12 md:col-span-4 text-muted-foreground">
@@ -190,6 +195,22 @@ export default function GovernancePage() {
                   <div className="col-span-6 md:col-span-1 text-right text-muted-foreground">
                     {relativeFromToday(r.opened)}
                   </div>
+                </>
+              );
+              return (
+                <li key={r.id}>
+                  {team ? (
+                    <Link
+                      to={`/teams/${team.id}`}
+                      className="group grid grid-cols-12 items-start gap-4 px-3 py-4 text-[13px] transition-colors hover:bg-secondary/50"
+                    >
+                      {inner}
+                    </Link>
+                  ) : (
+                    <div className="grid grid-cols-12 items-start gap-4 px-3 py-4 text-[13px]">
+                      {inner}
+                    </div>
+                  )}
                 </li>
               );
             })}

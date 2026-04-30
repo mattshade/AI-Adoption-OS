@@ -67,12 +67,14 @@ export default function TeamDetailPage() {
             <FactLabel>Tools in use</FactLabel>
             <ul className="mt-3 space-y-2">
               {team.tools.map((t) => (
-                <li
-                  key={t}
-                  className="flex items-center justify-between border-b border-dashed border-border pb-2 text-[13.5px]"
-                >
-                  <span className="text-foreground">{t}</span>
-                  <ArrowUpRight className="h-3 w-3 text-muted-foreground" />
+                <li key={t}>
+                  <Link
+                    to="/tools"
+                    className="group flex items-center justify-between border-b border-dashed border-border pb-2 text-[13.5px] transition-colors hover:border-foreground/40"
+                  >
+                    <span className="text-foreground transition-colors group-hover:text-foreground">{t}</span>
+                    <ArrowUpRight className="h-3 w-3 text-muted-foreground transition-colors group-hover:text-foreground" />
+                  </Link>
                 </li>
               ))}
             </ul>
