@@ -1,0 +1,6 @@
+[build]
+  command = "pnpm --dir artifacts/ai-adoption-crm build"
+  publish = "artifacts/ai-adoption-crm/dist/public"
+
+[build.environment]
+  BASE_PATH = "/"
